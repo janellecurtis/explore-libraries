@@ -20,7 +20,7 @@ packsInstalled <- as.data.frame(installed.packages(), row.names = FALSE)
 
 ## count some things! inspiration
 ##   * tabulate by LibPath, Priority, or both
-
+library(tidyverse)
 packsInstalled %>%
   count(LibPath, Priority)
 
@@ -61,7 +61,7 @@ packsInstalled %>%
 
 ## is every package in .Library either base or recommended?
 
-#####-All but the translations package (what's this?)
+#####-All but the translations package
 
 ## study package naming style (all lower case, contains '.', etc
 ## use `fields` argument to installed.packages() to get more info and use it!
