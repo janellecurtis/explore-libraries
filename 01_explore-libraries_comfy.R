@@ -2,7 +2,8 @@
 #' output: github_document
 #' ---
 
-
+# Setup
+library(tidyverse)
 
 #' Which libraries does R search for packages?
 
@@ -20,13 +21,14 @@
 ## how many packages?
 
 packsInstalled <- as.data.frame(installed.packages(), row.names = FALSE)
+nrow(packsInstalled)
 
 
 #' Exploring the packages
 
 ## count some things! inspiration
 ##   * tabulate by LibPath, Priority, or both
-library(tidyverse)
+
 packsInstalled %>%
   count(LibPath, Priority)
 
@@ -50,15 +52,15 @@ packsInstalled %>%
 
 ## reflect on ^^ and make a few notes to yourself; inspiration
 
-######-Use count(variable) instead of group_by and summarise n() to get counts by variables
+#Use count(variable) instead of group_by and summarise n() to get counts by variables
 
 ##   * does the number of base + recommended packages make sense to you?
 
-#####-Yes, based on what Jenny mentioned in class
+#Yes, based on what Jenny mentioned in class
 
 ##   * how does the result of .libPaths() relate to the result of .Library?
 
-#####-.libPaths() has a second directory where it stores all the packages I download
+#.libPaths() has a second directory where it stores all the packages I download
 
 
 #' Going further
@@ -67,9 +69,11 @@ packsInstalled %>%
 
 ## is every package in .Library either base or recommended?
 
-#####-All but the translations package
+#All but the translations package
 
 ## study package naming style (all lower case, contains '.', etc
 ## use `fields` argument to installed.packages() to get more info and use it!
 
 packsInstalledMore <- as.data.frame(installed.packages(fields = "URL"))
+
+sessionInfo()
