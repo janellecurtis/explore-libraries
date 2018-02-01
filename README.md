@@ -12,4 +12,8 @@ Let's look at a file!
 Making a local edit - to break git.
 
 
+<<<<<<< HEAD
 Editing the same file - push/pull sadz.
+=======
+Editing the same file - push/pull angerrr.
+>>>>>>> 9eae709fa4be8d92b8b1f11c21216f686ec49d30
