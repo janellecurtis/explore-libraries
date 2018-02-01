@@ -10,3 +10,6 @@ Let's look at a file!
 
 
 Making a local edit - to break git.
+
+
+Editing the same file - push/pull will fail.
